@@ -30,10 +30,11 @@ with left_column:
 input_Length1 = st.slider('Vertical length(cm)', 0.0, max(data["Length1"]), 1.0)
 input_Length2 = st.slider('Diagonal length(cm)', 0.0, max(data["Length2"]), 1.0)
 #input_Length3 = st.slider('Cross length(cm)', 0.0, max(data["Length3"]), 1.0)
-input_Length3 = 31.22704403
+input_Length3 = 24.97
 input_Height = st.slider('Height(cm)', 0.0, max(data["Height"]), 1.0)
 #input_Width = st.slider('Diagonal width(cm)', 0.0, max(data["Width"]), 1.0)
-input_Width = 4.417485535
+input_Width = 3.65785
+
 
 if st.button('Predict Fish Weight'):
     input_species = encoder.transform(np.expand_dims(inp_species, -1))
