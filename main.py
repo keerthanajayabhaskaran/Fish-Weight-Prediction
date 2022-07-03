@@ -15,23 +15,25 @@ encoder.classes_ = np.load('classes.npy',allow_pickle=True)
 best_xgboost_model = xgb.XGBRegressor()
 best_xgboost_model.load_model("best_model.json")
 
-if st.checkbox('Show Training Dataframe'):
-    data
+#if st.checkbox('Show Training Dataframe'):
+    #data
 
-st.subheader("Please select relevant features of your fish!")
+st.subheader("Please select fish dimensions")
 left_column, right_column = st.columns(2)
 with left_column:
-    inp_species = st.radio(
-        'Name of the fish:',
-        np.unique(data['Species']))
+    inp_species = "Parkki"
+    #inp_species = st.radio(
+        #'Name of the fish:',
+        #np.unique(data['Species']))
 
 
 input_Length1 = st.slider('Vertical length(cm)', 0.0, max(data["Length1"]), 1.0)
 input_Length2 = st.slider('Diagonal length(cm)', 0.0, max(data["Length2"]), 1.0)
-input_Length3 = st.slider('Cross length(cm)', 0.0, max(data["Length3"]), 1.0)
+#input_Length3 = st.slider('Cross length(cm)', 0.0, max(data["Length3"]), 1.0)
+input_Length3 = 31.22704403
 input_Height = st.slider('Height(cm)', 0.0, max(data["Height"]), 1.0)
-input_Width = st.slider('Diagonal width(cm)', 0.0, max(data["Width"]), 1.0)
-
+#input_Width = st.slider('Diagonal width(cm)', 0.0, max(data["Width"]), 1.0)
+input_Width = 4.417485535
 
 if st.button('Predict Fish Weight'):
     input_species = encoder.transform(np.expand_dims(inp_species, -1))
