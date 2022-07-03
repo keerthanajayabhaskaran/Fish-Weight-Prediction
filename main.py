@@ -21,7 +21,7 @@ best_xgboost_model.load_model("best_model.json")
 st.subheader("Please select fish dimensions")
 left_column, right_column = st.columns(2)
 with left_column:
-    inp_species = "Parkki"
+    inp_species = "Roach"
     #inp_species = st.radio(
         #'Name of the fish:',
         #np.unique(data['Species']))
